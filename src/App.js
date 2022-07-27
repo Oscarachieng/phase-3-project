@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Oscar Abuto Achieng</p>
     </div>
   );
 }
 
 export default App;
+
+
+/*
+Components.
+=============
+--App
+--Header (logo-name, Searchbar, other decos, NavBar )
+--NavBar (Links/NavLinks)
+--Introduction-(SideBar-category, Main-intro-slider, RightSideBar)
+--ProductList conponent- (ProductItem, AddToCart),
+--ProductDetails
+--Reviews,
+--NewLetterSubscription,
+--AddCommentForm,
+--Footer
+
+App
+   --Heder
+      --SearchBar
+      --NavBAR
+
+   --Introduction
+      --CategorySideBar(NavBarLinks )
+      --MainINtroImage/Message
+      --RightSideBar
+
+   --ProductList
+      --ProductItem
+      --AddToCart
+     
+   --ProductDetails
+   --Reviews
+   --NewLetterSubscription   
+   --Footer
+
+
+*/
