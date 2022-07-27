@@ -1,14 +1,17 @@
-import React from 'react';
-import Header from './Header';
-import { BrowserRouter as Router } from "react-router-dom";
-import './App.css';
+import React from "react";
+import Header from "./Header";
+import Home from "./Home";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
-    <Router className="App">
+    <Router>
       <Header />
       <p>Oscar Abuto Achieng</p>
-      {/* <Routes>
+      <Home />
+      <Routes>
+        {/* <Routes>
          <Route path='/about' >
            <About />
          </Route>
@@ -31,12 +34,13 @@ function App() {
            <Home /> 
          </Route>
       </Routes> */}
+        {/* <Route path="/" element ={<Home />} /> */}
+      </Routes>
     </Router>
   );
 }
 
 export default App;
-
 
 /*
 Components.

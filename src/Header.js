@@ -1,6 +1,9 @@
 import React from "react";
 import NavBar from "./NavBar";
 import SearchBar from "./searchBar";
+import Cart from "./images/Cart.png";
+import Like from "./images/Like.png";
+import Ec2 from  "./images/Ec2.png"
 
 const Header = () => {
   return (
@@ -15,18 +18,18 @@ const Header = () => {
         </div>
         <div className="image-container">
           <img
-            src="../src/public/Assets/images/heart.png"
-            height="5px"
+            src={Like}
+            height="40px"
             alt="like"
           />
           <img
-            src="../src/public/Assets/images/carts.png"
-            height="5px"
+            src={Cart}
+            height="40px"
             alt="shopping-cart"
           />
           <img
-            src="../src/public/Assets/images/13556223.jpg"
-            height="5px"
+            src={Ec2}
+            height="30px"
             alt="may"
           />
         </div>

@@ -2,12 +2,12 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <React.Fragment className="search-bar">
+    <React.Fragment >
       <input
         type="text"
         name="search-input"
         className="search"
-        placeHolder="Enter product Name or Categoty"
+        placeholder="Enter product Name or Categoty"
       />
       <button id="search-button">Search</button>
     </React.Fragment>

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: "smokewhite";
 }
 
 code {
@@ -62,8 +63,21 @@ code {
   font-size: x-large;
 }
 
+img {
+  justify-content: space-around;
+  margin-left: 20px;
+
+}
+
 /* styles the Header navigation section*/
 
 .navigation-buttons {
   justify-content: space-evenly;
+}
+
+/* introduction to styling*/
+
+.introduction {
+  height: 200px;
+  width: 100%;
 }

@@ -14,23 +14,23 @@ const linkStyles = {
 const NavBar = () => {
   return (
     <nav className="navigation-buttons">
-      <NavLink to="/" exact  style={linkStyles}>
+      <NavLink to="/"  style={linkStyles}>
         Home
       </NavLink>
 
-      <NavLink to="/about" exact style={linkStyles}>
+      <NavLink  to="/about"  style={linkStyles}>
         About
       </NavLink>
-      <NavLink to="/productlist" exact style={linkStyles}>
-        ProductList
+      <NavLink  to="/products"  style={linkStyles}>
+        Products
       </NavLink>
-      <NavLink to="/cart" exact style={linkStyles}>
+      <NavLink   to="/cart" style={linkStyles}>
         Cart
       </NavLink>
-      <NavLink to="/reviews" exact style={linkStyles}>
+      <NavLink   to="/reviews"  style={linkStyles}>
         Reviews
       </NavLink>
-      <NavLink to="/sign-up" exact style={linkStyles}>
+      <NavLink to="/sign-up"  style={linkStyles}>
         MyAccount
       </NavLink>
 
