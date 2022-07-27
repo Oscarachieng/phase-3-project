@@ -1,14 +1,37 @@
 import React from 'react';
 import Header from './Header';
-import { BrowserRouter as Router, Route , Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <Router className="App">
       <Header />
       <p>Oscar Abuto Achieng</p>
-    </div>
+      {/* <Routes>
+         <Route path='/about' >
+           <About />
+         </Route>
+         <Route path='/productlist' >
+           <ProductList />
+         </Route>
+         <Route path='/cart' >
+           <Cart />
+         </Route>
+         <Route path='/reviews' >
+           <Reviews />
+         </Route>
+         <Route path='/sign-up' >
+           <MyAccount />
+         </Route>
+         <Route path='/login' >
+           <Sign-in />
+         </Route>
+         <Route path= "/" >
+           <Home /> 
+         </Route>
+      </Routes> */}
+    </Router>
   );
 }
 

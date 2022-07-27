@@ -6,15 +6,30 @@ const Header = () => {
   return (
     <div className="header">
       <div className="upper-section">
-        <h2 className="lydo">Smart<span>Lydo</span></h2>
+        <h2 className="lydo">
+          {" "}
+          Smart <span> Lydo </span>
+        </h2>
         <SearchBar />
-        <p className="likes">like</p>
-        <p className="likes">like</p>
-        <p className="likes">like</p>
-      </div>
+        <img
+          src="../src/public/Assets/images/heart.png"
+          height="5px"
+          alt="like"
+        />
+        <img
+          src="../src/public/Assets/images/carts.png"
+          height="5px"
+          alt="shopping-cart"
+        />
+        <img
+          src="../src/public/Assets/images/13556223.jpg"
+          height="5px"
+          alt="may"
+        />
+      </div>{" "}
       <div className="lower-section">
         <NavBar />
-      </div>
+      </div>{" "}
     </div>
   );
 };
