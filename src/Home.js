@@ -1,8 +1,10 @@
 import React from "react";
+import ProductList from "./ProductList";
 
 const Home = () => {
   return (
-    <div
+    <div>
+      <div
       className="introduction"
       style={{
         display: "flex",
@@ -54,6 +56,9 @@ const Home = () => {
         Right side bar
         {/* <RightSideBar /> */}
       </div>
+    
+    </div>
+    <ProductList />
     </div>
   );
 };
