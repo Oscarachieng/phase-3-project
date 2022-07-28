@@ -2,7 +2,7 @@ import React from "react";
 import ProductList from "./ProductList";
 import ProductDetails from "./ProductDetails";
 
-const Home = () => {
+const Home = ( {products}) => {
   return (
     <div>
       <div
@@ -59,8 +59,8 @@ const Home = () => {
       </div>
     
     </div>
-    <ProductDetails />
-    <ProductList />
+    <ProductDetails products = {products}/>
+    <ProductList products = {products} />
     </div>
   );
 };
