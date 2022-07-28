@@ -1,7 +1,10 @@
 import React from "react";
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import About from "./About";
+import Reviews from "./Reviews";
+import MyCart from "./MyCart";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./Footer";
 
@@ -9,34 +12,15 @@ function App() {
   return (
     <Router>
       <Header />
-      <p>Oscar Abuto Achieng</p>
-      <Home />
 
       <Routes>
-        {/* <Routes>
-         <Route path='/about' >
-           <About />
-         </Route>
-         <Route path='/productlist' >
-           <ProductList />
-         </Route>
-         <Route path='/cart' >
-           <Cart />
-         </Route>
-         <Route path='/reviews' >
-           <Reviews />
-         </Route>
-         <Route path='/sign-up' >
-           <MyAccount />
-         </Route>
-         <Route path='/login' >
-           <Sign-in />
-         </Route>
-         <Route path= "/" >
-           <Home /> 
-         </Route>
-      </Routes> */}
-        {/* <Route path="/" element ={<Home />} /> */}
+        <Route path="/about" element={<About />} />
+
+        <Route path="/mycart" element={<MyCart />} />
+
+        <Route path="/reviews" element={<Reviews />} />
+
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </Router>

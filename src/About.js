@@ -4,14 +4,12 @@ import Team from "./Team";
 import Successes from "./Successes";
 
 const About = () => {
+  return (
+    <section>
+      <Team />
+      <Successes />
+    </section>
+  );
+};
 
-     return (
-         <section>
-             <Team />
-             <Successes />
-         </section>
-     )
-}
-
-export default Reviews;
-
+export default About;

@@ -17,22 +17,32 @@ const CommentForm = () => {
           placeholder="Enter your Name here"
           required
         />
-        <input  style={{
+        <input
+          style={{
             marginTop: "11px",
             padding: "10px",
             height: "200px",
             width: "300px",
             borderColor: "transparent",
             borderBottom: "black",
-          }}type="Country" placeholder="Enter Your Country" required />
-        <textarea  style={{
+          }}
+          type="Country"
+          placeholder="Enter Your Country"
+          required
+        />
+        <textarea
+          style={{
             marginTop: "11px",
             padding: "10px",
             height: "200px",
             width: "300px",
             borderColor: "transparent",
             borderBottom: "black",
-          }}type="text" placeholder="Enter Your Comment here" required />
+          }}
+          type="text"
+          placeholder="Enter Your Comment here"
+          required
+        />
         <button
           style={{
             paddingBottom: "10px",
