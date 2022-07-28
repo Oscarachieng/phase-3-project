@@ -1,5 +1,6 @@
 import React from "react";
 import ProductList from "./ProductList";
+import ProductDetails from "./ProductDetails";
 
 const Home = () => {
   return (
@@ -58,6 +59,7 @@ const Home = () => {
       </div>
     
     </div>
+    <ProductDetails />
     <ProductList />
     </div>
   );

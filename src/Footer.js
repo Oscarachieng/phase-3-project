@@ -3,14 +3,14 @@ import React, { useState } from "react";
 const Footer = () => {
 
     const [isHovering, setIsHovering] = useState(false);
-
+   // mause hovering effect on Footer Subscribe button
     const handleMouseEnter = () => {
       setIsHovering(true);
     };
   
-    // const handleMouseLeave = () => {
-    //   setIsHovering(false);
-    // };
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+    };
   return (
     <div
       style={{
@@ -58,12 +58,11 @@ const Footer = () => {
             marginTop: "20px",
             marginLeft: "170px",
             borderColor: "transparent",
-            color: isHovering ? "orange" : " ",
-            backgroundColor: "orange",
-            
+            color: isHovering ? "orangered" : "white",
+            backgroundColor: isHovering ? "white" : "orange"
           }}
           onMouseEnter={handleMouseEnter}
-        //   onMouseLeave={handleMouseLeave}
+          onMouseLeave={handleMouseLeave}
         >
           Subscribe
         </button>
