@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./Footer";
 import axios from "axios";
-
+import ProductDetails from "./ProductDetails";
+import ProductList from "./ProductList";
 
 /* 
  1. declare product state variables
@@ -17,24 +18,33 @@ import axios from "axios";
 */
 
 function App() {
-
   // Initialize products state variables
   const [products, setProducts] = useState([]);
-  
+  const [isHovering, setIsHovering] = useState(0);
+  const [searchText, setSearchText] = useState("");
+
+ //function to handle
+ const handleSearch = (textInput) => {
+   setSearchText(textInput);
+ }
+
   const productsUrl = "https://fakestoreapi.com/products";
 
-  // Fetch data using axios 
-  useEffect (() => {
-    axios.get(productsUrl).then( (response) =>{
-      console.log(response.data);
-      setProducts(response.data)
-    }).catch(function (error) {
-      console.error(error);
-    })
-  },[])
+  // Fetch data using axios
+  useEffect(() => {
+    axios
+      .get(productsUrl)
+      .then((response) => {
+        console.log(response.data);
+        setProducts(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
   return (
     <Router>
-      <Header />
+      <Header onSearch = {handleSearch}/>
 
       <Routes>
         <Route path="/about" element={<About />} />
@@ -43,7 +53,21 @@ function App() {
 
         <Route path="/reviews" element={<Reviews />} />
 
-        <Route path="/" element={<Home products = {products} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              products={products}
+              isHovering={isHovering}
+              setIsHovering={setIsHovering}
+              searchText = {searchText}
+            />
+          }
+        >
+          <Route path="/productlist" element={<ProductList />}>
+            <Route path=":id" element={<ProductDetails />} />
+          </Route>
+        </Route>
       </Routes>
       <Footer />
     </Router>

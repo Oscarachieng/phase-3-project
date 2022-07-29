@@ -1,6 +1,9 @@
 import React from "react";
 
 const ProductDetails = () => {
+
+  // const param = useParam();
+  // const id = param.id;
   return (
     <section
       style={{
@@ -24,7 +27,7 @@ const ProductDetails = () => {
         borderStyle: "groove",
         borderWidth: "1px", height: "300px"}}>
         production information, title, Price, Promotional message, Add to Cart
-        Button
+        Button  
       </section>
     </section>
   );

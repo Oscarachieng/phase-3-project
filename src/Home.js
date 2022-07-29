@@ -1,8 +1,12 @@
 import React from "react";
+
 import ProductList from "./ProductList";
 import ProductDetails from "./ProductDetails";
 
-const Home = ( {products}) => {
+const Home = ( { products, isHovering,setIsHovering, searchText }) => {
+
+ 
+
   return (
     <div>
       <div
@@ -59,8 +63,8 @@ const Home = ( {products}) => {
       </div>
     
     </div>
-    <ProductDetails products = {products}/>
-    <ProductList products = {products} />
+    <ProductDetails products = {products}  isHovering = {isHovering} />
+    <ProductList setIsHovering = {setIsHovering} products = {products} isHovering = {isHovering} searchText= {searchText}/>
     </div>
   );
 };

@@ -1,8 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , Outlet} from "react-router-dom";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, searchText,  isHovering, setIsHovering }) => {
+
+  // Filtering the product to display
+  const productsToDisplay = products.filter((product) => {
+    if (searchText === "") return true;
+    return product.title.toLowerCase().includes(searchText.toLowerCase())
+  })
   return (
+    <>
+    <Outlet />
     <div
       style={{
         minHeight: "400px",
@@ -16,18 +24,22 @@ const ProductList = ({ products }) => {
         justifyContent: "space-around",
       }}
     >
-      {products.map((product) => {
+      {productsToDisplay.map((product) => {
+
+        const { id, image, title, price, rating } = product
         return (
           <div
             style={{
               width: "250px",
               backgroundColor: "aliceblue",
-              marginTop: "10px",
+              marginTop: "30px",
               textAlign: "center",
+             
             }}
+            key = {id}
           >
             <img
-              src={product.image}
+              src={image}
               alt="Product"
               style={{ width: "200px", maxHeight: "150px" }}
             />
@@ -38,21 +50,35 @@ const ProductList = ({ products }) => {
                 marginBottom: "0px",
               }}
             >
-              {product.title}
+              {title}
             </h4>
             <div style={{ display: "flex" }}>
               <h5
                 style={{ width: "250px", fontSize: "medium", color: "orange" }}
-              >{`Price : ${product.price}`}</h5>
+              >{`Price : ${price}`}</h5>
               <h5
                 style={{ width: "250px", fontSize: "medium", color: "orange" }}
-              >{`Rating : ${product.rating.rate}`}</h5>
+              >{`Rating : ${rating.rate}`}</h5>
             </div>
-            <Link to={`/home/${product.id}`}>Product Details</Link>
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <Link to={`/productlist/${id}`}>More Details</Link>
+              <button
+                style={{
+                  borderColor: "transparent",
+                  color: isHovering === product.id ? "orangered" : "white",
+                  backgroundColor: isHovering===product.id ? "white" : "orange",
+                }}
+                onMouseEnter={(()=> setIsHovering(product.id))}
+                onMouseLeave={(() => setIsHovering(0))}
+              >
+                Add To Cart
+              </button>
+            </div>
           </div>
         );
       })}
     </div>
+    </>
   );
 };
 

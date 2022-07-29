@@ -20,6 +20,7 @@ code {
   height: 110px;
   background-color: orange;
   margin-bottom: 20px ;
+  position: fixed;
 }
 
 .header .upper-section {
@@ -57,6 +58,17 @@ code {
   background-color: white;
   margin-left: 5px;
 }
+nav a {
+
+  display: inline-block;
+  width: 50px;
+  padding: 6px;
+  margin: 0 20px 6px;
+  background-color: orange;
+  text-decoration: none;
+  color: Black;
+}
+
 .lydo span {
   color: white;
 }

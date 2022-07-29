@@ -5,7 +5,7 @@ import Cart from "./images/Cart.png";
 import Like from "./images/Like.png";
 import Ec2 from  "./images/Ec2.png"
 
-const Header = () => {
+const Header = ({ onSearch }) => {
   return (
     <div className="header">
       <div className="upper-section">
@@ -14,7 +14,7 @@ const Header = () => {
           Smart<span>Lydo</span>
         </h2>
         <div>
-          <SearchBar />
+          <SearchBar onSearch = {onSearch} />
         </div>
         <div className="image-container">
           <img
