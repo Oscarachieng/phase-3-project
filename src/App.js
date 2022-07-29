@@ -20,6 +20,7 @@ import ProductList from "./ProductList";
 function App() {
   // Initialize products state variables
   const [products, setProducts] = useState([]);
+  const [amazonProducts, setAmazonProducts] = useState ([])
   const [isHovering, setIsHovering] = useState(0);
   const [searchText, setSearchText] = useState("");
 
@@ -28,6 +29,26 @@ function App() {
    setSearchText(textInput);
  }
 
+ //fetch Products from Amazon API
+ useEffect (()=> {
+  const options = {
+    method: 'GET',
+    url: 'https://amazon23.p.rapidapi.com/product-search',
+    params: {query: 'xbox', country: 'US'},
+    headers: {
+      'X-RapidAPI-Key': '7310622931msh9f6735caf0bf519p1c820cjsn2c95afa5cfdc',
+      'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
+    }
+  };
+  
+  axios.get('https://amazon23.p.rapidapi.com/product-search',options).then(function (response) {
+    setAmazonProducts(response.data.result)
+  }).catch(function (error) {
+    console.error(error);
+  });
+ })
+ 
+
   const productsUrl = "https://fakestoreapi.com/products";
 
   // Fetch data using axios
@@ -35,7 +56,6 @@ function App() {
     axios
       .get(productsUrl)
       .then((response) => {
-        console.log(response.data);
         setProducts(response.data);
       })
       .catch(function (error) {
@@ -58,6 +78,7 @@ function App() {
           element={
             <Home
               products={products}
+              amazonProducts = {amazonProducts}
               isHovering={isHovering}
               setIsHovering={setIsHovering}
               searchText = {searchText}
