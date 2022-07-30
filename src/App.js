@@ -30,9 +30,16 @@ function App() {
    setSearchText(textInput);
  }
  // Function to handle Add to Cart Click
- const HandleAddToCartClick = (productToCart) => {
+ const handleAddToCartClick = (productToCart) => {
     setItemsInCart([...itemsInCart, productToCart]);
     console.log([...itemsInCart, productToCart])
+ };
+ 
+ // Function to handle remove button click
+ const handleRemoveButtonClick = (id) => {
+  const onRemove = itemsInCart.filter((item) => item.id !== id);
+  console.log(onRemove)
+  setItemsInCart(onRemove);
     
     // let navigate = useNavigate();
     // navigate("/mycart");
@@ -78,7 +85,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
 
-        <Route path="/mycart" element={<MyCart itemsInCart={itemsInCart}/>} />
+        <Route path="/mycart" element={<MyCart itemsInCart={itemsInCart}  onRemove={handleRemoveButtonClick} />} />
 
         <Route path="/reviews" element={<Reviews />} />
 
@@ -91,7 +98,7 @@ function App() {
               isHovering={isHovering}
               setIsHovering={setIsHovering}
               searchText = {searchText}
-              onAddToCart = {HandleAddToCartClick}
+              onAddToCart = {handleAddToCartClick}
             />
           }
         >
