@@ -23,10 +23,17 @@ function App() {
   const [amazonProducts, setAmazonProducts] = useState ([])
   const [isHovering, setIsHovering] = useState(0);
   const [searchText, setSearchText] = useState("");
+  const [itemsInCart, setItemsInCart] = useState([]);
 
  //function to handle
  const handleSearch = (textInput) => {
    setSearchText(textInput);
+ }
+ // Function to handle Add to Cart Click
+ const HandleAddToCartClick = (productToCart) => {
+    setItemsInCart([...itemsInCart, productToCart]);
+    // let navigate = useNavigate();
+    // navigate("/mycart");
  }
 
  //fetch Products from Amazon API
@@ -46,7 +53,7 @@ function App() {
   }).catch(function (error) {
     console.error(error);
   });
- })
+ },[])
  
 
   const productsUrl = "https://fakestoreapi.com/products";
@@ -69,7 +76,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
 
-        <Route path="/mycart" element={<MyCart />} />
+        <Route path="/mycart" element={<MyCart itensInCart={itemsInCart}/>} />
 
         <Route path="/reviews" element={<Reviews />} />
 
@@ -82,6 +89,7 @@ function App() {
               isHovering={isHovering}
               setIsHovering={setIsHovering}
               searchText = {searchText}
+              onAddToCart = {HandleAddToCartClick}
             />
           }
         >

@@ -3,17 +3,19 @@ import React from "react";
 import ProductList from "./ProductList";
 import ProductDetails from "./ProductDetails";
 
-const Home = ({
-  products,
-  amazonProducts,
-  isHovering,
-  setIsHovering,
-  searchText,
-}) => {
+const Home = (props) => {
+  const {
+    products,
+    amazonProducts,
+    isHovering,
+    setIsHovering,
+    searchText,
+    onAddToCart,
+  } = props;
   // Combining the two product list (products,amazonProducts)
   // const generalProductList = [...products,...amazonProducts];
   // console.log(generalProductList);
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       <div
@@ -34,10 +36,11 @@ const Home = ({
             borderColor: "orange",
             borderStyle: "groove",
             borderWidth: "1px",
-            color: "orange", textAlign: "center"
+            color: "orange",
+            textAlign: "center",
           }}
         >
-          <p >Product Categories</p>
+          <p>Product Categories</p>
           {products.map((product) => {
             if (
               product.id === 1 ||
@@ -48,9 +51,9 @@ const Home = ({
               product.id === 10 ||
               product.id === 17 ||
               product.id === 19
-            ){
-              return <h4 style={{ fontSize: "small" }}>{product.category}</h4>;}
-              
+            ) {
+              return <h4 style={{ fontSize: "small" }}>{product.category}</h4>;
+            }
           })}
         </div>
         <div
@@ -88,6 +91,7 @@ const Home = ({
         products={products}
         isHovering={isHovering}
         searchText={searchText}
+        onAddToCart={onAddToCart}
       />
     </div>
   );
