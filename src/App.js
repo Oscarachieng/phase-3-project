@@ -32,6 +32,8 @@ function App() {
  // Function to handle Add to Cart Click
  const HandleAddToCartClick = (productToCart) => {
     setItemsInCart([...itemsInCart, productToCart]);
+    console.log([...itemsInCart, productToCart])
+    
     // let navigate = useNavigate();
     // navigate("/mycart");
  }
@@ -76,7 +78,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
 
-        <Route path="/mycart" element={<MyCart itensInCart={itemsInCart}/>} />
+        <Route path="/mycart" element={<MyCart itemsInCart={itemsInCart}/>} />
 
         <Route path="/reviews" element={<Reviews />} />
 
@@ -94,6 +96,7 @@ function App() {
           }
         >
           <Route path="/productlist" element={<ProductList />}>
+
             <Route path=":id" element={<ProductDetails />} />
           </Route>
         </Route>
