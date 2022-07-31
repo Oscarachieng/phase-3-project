@@ -58,13 +58,14 @@ const Reviews = () => {
     };
     fetch("http://localhost:3000/data", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       },
       body: JSON.stringify(formData),
     })
       .then((r) => r.json())
-      .then((newReviewItem) => console.log(newReviewItem));
+      .then((newReviewItem) => setRevviews([...reviews,newReviewItem]));
 
       setProfileName ("");
       setReviewText ("");
@@ -78,15 +79,15 @@ const Reviews = () => {
       <div className="comments">
         {reviews.map((review, reviewIndex) => {
           const { review_country, review_text, profile_name } = review;
-          let position = "nextSlide";
+          let position = "nextReviewSlide";
           if (reviewIndex === index) {
-            position = "activeSlide";
+            position = "activeReviewSlide";
           }
           if (
             reviewIndex === index - 1 ||
             (index === 0 && reviewIndex === review.length - 1)
           ) {
-            position = "lastSlide";
+            position = "lastReviewSlide";
           }
           return (
             <article className={position} key={profile_name}>

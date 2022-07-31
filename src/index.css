@@ -129,6 +129,8 @@ img {
 
 .comments {
   width: 60%;
+  padding-left: 30%;
+  align-content: center;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -140,6 +142,7 @@ img {
 .reviews {
   height:fit-content;
   align-items: center;
+  
 }
 
 /*
@@ -162,7 +165,7 @@ article {
 
 article.activeSlide {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(1);
 }
 article.lastSlide {
   transform: translateX(-100%);
@@ -250,6 +253,7 @@ styling review component
    font-size: x-large;
    width: 80%;
    text-align: center;
+   height: 60%;
 }
 
 .profile-name {
@@ -260,4 +264,22 @@ styling review component
 .review-country {
   color: orange;
   text-align: center;
+}
+
+
+article.activeReviewSlide {
+  opacity: 1;
+  transform: translateX(1);
+  width: fit-content;
+}
+article.lastReviewSlide1 {
+  transform: translateX(-100%);
+}
+article.nextReviewSlide1 {
+  transform: translateX(100%);
+}
+
+.comments{
+  overflow: hidden;
+  display: flex;
 }
