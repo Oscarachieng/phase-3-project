@@ -39,6 +39,8 @@ const ProductCard = (props) => {
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Link to={`/productlist/${id}`}>More Details</Link>
           <Link to={"/mycart"}>
+            <button>Cart</button>
+          </Link>
             <button
               style={{
                 borderColor: "transparent",
@@ -51,7 +53,7 @@ const ProductCard = (props) => {
             >
               Add To Cart
             </button>
-          </Link>
+          
         </div>
       </div>
     </div>
