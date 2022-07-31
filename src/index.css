@@ -65,6 +65,7 @@ nav a {
   background-color: orange;
   text-decoration: none;
   color: Black;
+  margin-right: 40px;
 }
 
 .lydo span {
@@ -83,6 +84,7 @@ img {
 
 .navigation-buttons {
   justify-content: space-evenly;
+  padding-left: 170px;
 }
 
 /* introduction to styling*/
@@ -94,15 +96,13 @@ img {
 
 /* comment-input form*/
 .comment-form-new {
- 
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   align-items: center;
 }
 
-.comment-form-new input
- {
+.comment-form-new input {
   width: 100%;
   padding: 0 20px;
   border: 1px solid orange;
@@ -140,9 +140,8 @@ img {
 }
 
 .reviews {
-  height:fit-content;
+  height: fit-content;
   align-items: center;
-  
 }
 
 /*
@@ -249,23 +248,21 @@ styling review component
 */
 
 .review-text {
-   font-style: oblique;
-   font-size: x-large;
-   width: 80%;
-   text-align: center;
-   height: 60%;
+  font-style: oblique;
+  font-size: x-large;
+  width: 80%;
+  text-align: center;
+  height: 60%;
 }
 
 .profile-name {
   text-align: center;
-  
 }
 
 .review-country {
   color: orange;
   text-align: center;
 }
-
 
 article.activeReviewSlide {
   opacity: 1;
@@ -279,7 +276,42 @@ article.nextReviewSlide1 {
   transform: translateX(100%);
 }
 
-.comments{
+.comments {
   overflow: hidden;
   display: flex;
 }
+
+/* Home introduction styling*/
+
+.introduction {
+  border-bottom: 1px solid gray;
+  display: flex;
+  margin-left: 120px;
+  align-content: center;
+  width: 80%;
+  height: 420px;
+  margin-bottom: 40px;
+}
+.category-side-bar {
+  height: 400px;
+  width: 150px;
+  border: 1px solid peachpuff;
+  border-width: 1px;
+  background-color: rgb(243, 241, 241);
+  text-align: "center";
+}
+.category-side-bar h4 {
+
+  color: "orange";
+ }
+
+ .side-show-container {
+  height: 400px;
+  width: 600px;
+
+  borderWidth: 1px;
+  marginLeft: 20px;
+  marginRight: 20px;
+ }
+
+

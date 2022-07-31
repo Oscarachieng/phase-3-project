@@ -21,25 +21,11 @@ const Home = (props) => {
     <div>
       <div
         className="introduction"
-        style={{
-          display: "flex",
-          marginLeft: "120px",
-          width: "80%",
-          alignContent: "center",
-          height: "420px",
-        }}
+
       >
         <div
           className="category-side-bar"
-          style={{
-            height: "400px",
-            width: "150px",
-            borderColor: "orange",
-            borderStyle: "groove",
-            borderWidth: "1px",
-            color: "orange",
-            textAlign: "center",
-          }}
+         
         >
           <p>Product Categories</p>
           {products.map((product) => {
@@ -53,7 +39,8 @@ const Home = (props) => {
               product.id === 17 ||
               product.id === 19
             ) {
-              return <h4 style={{ fontSize: "small" }}>{product.category}</h4>;
+              return <h4 style={{color
+                :"orange", textAlign : "center",fontSize: "small" }}>{product.category}</h4>;
             }
           })}
         </div>
@@ -62,8 +49,7 @@ const Home = (props) => {
           style={{
             height: "400px",
             width: "600px",
-            borderColor: "orange",
-            borderStyle: "groove",
+         
             borderWidth: "1px",
             marginLeft: "20px",
             marginRight: "20px",
