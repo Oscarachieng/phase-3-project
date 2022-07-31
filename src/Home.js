@@ -7,7 +7,6 @@ import IntroImageSlide from "./IntroImageSlide";
 const Home = (props) => {
   const {
     products,
-    amazonProducts,
     isHovering,
     setIsHovering,
     searchText,

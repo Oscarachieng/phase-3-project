@@ -46,23 +46,23 @@ function App() {
  }
 
  //fetch Products from Amazon API
- useEffect (()=> {
-  const options = {
-    method: 'GET',
-    url: 'https://amazon23.p.rapidapi.com/product-search',
-    params: {query: 'xbox', country: 'US'},
-    headers: {
-      'X-RapidAPI-Key': '7310622931msh9f6735caf0bf519p1c820cjsn2c95afa5cfdc',
-      'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
-    }
-  };
+//  useEffect (()=> {
+//   const options = {
+//     method: 'GET',
+//     url: 'https://amazon23.p.rapidapi.com/product-search',
+//     params: {query: 'xbox', country: 'US'},
+//     headers: {
+//       'X-RapidAPI-Key': '7310622931msh9f6735caf0bf519p1c820cjsn2c95afa5cfdc',
+//       'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
+//     }
+//   };
   
-  axios.get('https://amazon23.p.rapidapi.com/product-search',options).then(function (response) {
-    setAmazonProducts(response.data.result)
-  }).catch(function (error) {
-    console.error(error);
-  });
- },[])
+//   axios.get('https://amazon23.p.rapidapi.com/product-search',options).then(function (response) {
+//     setAmazonProducts(response.data.result)
+//   }).catch(function (error) {
+//     console.error(error);
+//   });
+//  },[])
  
 
   const productsUrl = "https://fakestoreapi.com/products";
@@ -79,7 +79,7 @@ function App() {
       });
   }, []);
   return (
-    <Router>
+    <>
       <Header onSearch = {handleSearch}/>
 
       <Routes>
@@ -109,7 +109,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 

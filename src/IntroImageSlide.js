@@ -1,54 +1,53 @@
 import React, { useState, useEffect } from "react";
 
+const IntroImageSlide = ({ products }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideLength = products.length;
 
-const IntroImageSlide =({ products }) => {
+  const autoScroll = true;
+  let slideInterval;
 
-    const [index, setIndex] = useState(0)
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
+  };
 
-    useEffect(()=> {
-      const lastIndex = products.length - 1;
+  const auto = () => {
+    slideInterval = setInterval(nextSlide, 5000);
+  };
 
-      if(index > 0) {
-          setIndex(lastIndex);
-      }
-      if(index > lastIndex){
-          setIndex(0)
-      }
-    },[index, products]);
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, []);
 
-    useEffect (() => {
-        let slider = setInterval(()=> {
-            setIndex(index + 1)
-        },4000);
-        return () => {
-            clearInterval(slider)
-        }
-    }, [index]);
+  useEffect(() => {
+    if (autoScroll) {
+      auto();
+    }
+    return () => clearInterval(slideInterval);
+  }, [currentSlide]);
 
-   return (
-       <section className="side-show-container">
-           {products.map((product,productIndex) => {
-               const { id, image, title, price }= product;
-               let position = "nextSlide";
-               if(productIndex === index) {
-                   position = "activeSlide";
-               }
-               if(productIndex === index-1 || (index === 0 && productIndex === product.length -1)) {
-                   position = "lastSlide";
-               }
-               return (
-                   <article className={position} key = {id}>
-                          <img src = {image} alt ={title} className = "slideImage"/>
-                          <div className="description-slider">
-                              <h4 className="title">{title}</h4>
-                              <h4 className="price">{price}</h4>
-                          </div>
-                   </article>
-               )
-
-           })}
-       </section>
-   )
-
-}
+  return (
+    <div className="slider">
+      {products.map((product, index) => {
+        const { id, image, title, price } = product;
+        return (
+          <div
+            className={index === currentSlide ? "slide current" : "slide"}
+            key={id}
+          >
+            {index === currentSlide && (
+              <div>
+                <img src={image} alt="slide" className="image" />
+                <div className="content">
+                  <h2>{title}</h2>
+                  <p className="content-title">$ {price}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 export default IntroImageSlide;
