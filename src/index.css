@@ -20,7 +20,6 @@ code {
   height: 110px;
   background-color: orange;
   margin-bottom: 20px ;
- 
 }
 
 .header .upper-section {
@@ -93,4 +92,46 @@ img {
 .introduction {
   height: 200px;
   width: 100%;
+}
+
+/* comment-input form*/
+.comment-form{
+  top: 50%;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  transform: translate(-50%,50%);
+
+  align-items: center;
+}
+
+.comment-form input, .comment-form textarea {
+  width: 100%;
+  padding: 0 20px;
+  border: 1px solid orange;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid orange;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.comment-form button {
+  border: 0;
+  padding: 15px 20px;
+  width: auto;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(243, 180, 63);
+}
+
+.reviews {
+  height: auto;
+  align-items: center;
 }

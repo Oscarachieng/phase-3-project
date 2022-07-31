@@ -6,9 +6,11 @@ import CommentForm from "./CommentForm";
 
 const Reviews = () => {
   return (
-    <section>
+    <section className="reviews">
       <Comments />
-      <CommentForm />
+     <div>
+     <CommentForm />
+     </div>
     </section>
   );
 };
