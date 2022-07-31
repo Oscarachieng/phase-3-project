@@ -2,6 +2,7 @@ import React from "react";
 
 import ProductList from "./ProductList";
 import ProductDetails from "./ProductDetails";
+import IntroImageSlide from "./IntroImageSlide";
 
 const Home = (props) => {
   const {
@@ -57,7 +58,7 @@ const Home = (props) => {
           })}
         </div>
         <div
-          className="intro-message"
+          className="side-show-container"
           style={{
             height: "400px",
             width: "600px",
@@ -68,8 +69,9 @@ const Home = (props) => {
             marginRight: "20px",
           }}
         >
-          image slider
+        
           {/* <IntroMessage /> */}
+          <IntroImageSlide products= {products} />
         </div>
         <div
           className="right-side-bar"
