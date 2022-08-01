@@ -13,7 +13,7 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/data")
+      .get("https://62e76b330e5d74566af3e785.mockapi.io/data")
       .then((response) => {
         console.log(response.data);
         setRevviews(response.data);

@@ -19,7 +19,7 @@ const Footer = () => {
     const handleSubmit = (event) => {
         event.preventDefault ();
         const emailSubscriptionFormData = { email : email };
-        fetch("http://localhost:3000/newsletter", {
+        fetch("https://62e76b330e5d74566af3e785.mockapi.io/newsletter", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
