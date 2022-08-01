@@ -1,9 +1,9 @@
-import React from "react";
-
+import React  from "react";
+import { useParams } from "react-router-dom";
 const ProductDetails = () => {
 
-  // const param = useParam();
-  // const id = param.id;
+   const param = useParams();
+   const id = param.id;
   return (
     <section
       style={{
@@ -22,7 +22,7 @@ const ProductDetails = () => {
      
       <section style={{width : "40%", borderColor: "orange",
         borderStyle: "groove",
-        borderWidth: "1px", height: "300px"}}>image section</section>
+        borderWidth: "1px", height: "300px"}}>image section {id}</section>
       <section style={{width : "40%", borderColor: "orange",
         borderStyle: "groove",
         borderWidth: "1px", height: "300px"}}>

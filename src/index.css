@@ -137,6 +137,7 @@ img {
   height: 300px;
   border: 1px solid orange;
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .reviews {
@@ -266,8 +267,8 @@ styling review component
 
 article.activeReviewSlide {
   opacity: 1;
-  transform: translateX(1);
-  width: fit-content;
+  transform: translateX(0);
+  width: 100%;
 }
 article.lastReviewSlide1 {
   transform: translateX(-100%);
@@ -277,7 +278,7 @@ article.nextReviewSlide1 {
 }
 
 .comments {
-  overflow: hidden;
+  overflow:hidden;
   display: flex;
 }
 
@@ -367,4 +368,31 @@ article.nextReviewSlide1 {
   opacity: 1;
   transform: translateX(0);
   transition: all 0.5s ease;
+}
+
+.content-review {
+  text-align: center;
+  width: 70%;
+  font-style: oblique;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(236, 230, 214);
+  padding: 20px;
+  border: 1px solid peachpuff;
+}
+
+.content-review h2, .content-review  h5 {
+  color: chocolate;
+}
+
+.review-title {
+
+color: grey;
+font-size: x-large;
+border-bottom: 1px solid black;
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+height: 40px;
+margin-bottom: 40px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 import ProductList from "./ProductList";
-import ProductDetails from "./ProductDetails";
+
 import IntroImageSlide from "./IntroImageSlide";
 
 const Home = (props) => {
@@ -72,7 +72,7 @@ const Home = (props) => {
           {/* <RightSideBar /> */}
         </div>
       </div>
-      <ProductDetails products={products} isHovering={isHovering} />
+      {/* <ProductDetails products={products} isHovering={isHovering} /> */}
       <ProductList
         setIsHovering={setIsHovering}
         products={products}

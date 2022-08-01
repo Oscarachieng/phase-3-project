@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 
 const Reviews = () => {
   const [reviews, setRevviews] = useState([]);
-  const [index, setIndex] = useState(0);
- const [profile_name, setProfileName] = useState("");
- const [review_text , setReviewText] = useState("");
- const [review_country, setReviewCountry] = useState("");
+  const [profile_name, setProfileName] = useState("");
+  const [review_text, setReviewText] = useState("");
+  const [review_country, setReviewCountry] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideLength = reviews.length;
 
-  // fetch the reveiew data
   useEffect(() => {
     axios
       .get("http://localhost:3000/data")
@@ -23,109 +23,105 @@ const Reviews = () => {
       });
   }, []);
 
-  // review slide hnadle
+  const autoScroll = true;
+  let slideInterval;
+
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
+  };
+
+  const auto = () => {
+    slideInterval = setInterval(nextSlide, 5000);
+  };
 
   useEffect(() => {
-    const lastIndex = reviews.length - 1;
-
-    if (index > 0) {
-      setIndex(lastIndex);
-    }
-    if (index > lastIndex) {
-      setIndex(0);
-    }
-  }, [index, reviews]);
+    setCurrentSlide(0);
+  }, []);
 
   useEffect(() => {
-    let slider = setInterval(() => {
-      setIndex(index + 1);
-    }, 5000);
-    return () => {
-      clearInterval(slider);
-    };
-  }, [index]);
+    if (autoScroll) {
+      auto();
+    }
+    return () => clearInterval(slideInterval);
+  }, [currentSlide]);
 
-
-  // function to handle commnet form submit click
-
-  const handleSubmitClick = (event)=> {
+  const handleSubmitClick = (event) => {
     event.preventDefault();
-    
+
     const formData = {
-      profile_name : profile_name,
-      review_text : review_text,
-      review_country : review_country
+      profile_name: profile_name,
+      review_text: review_text,
+      review_country: review_country,
     };
     fetch("http://localhost:3000/data", {
       method: "POST",
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(formData),
     })
       .then((r) => r.json())
-      .then((newReviewItem) => setRevviews([...reviews,newReviewItem]));
+      .then((newReviewItem) => setRevviews([...reviews, newReviewItem]));
 
-      setProfileName ("");
-      setReviewText ("");
-      setReviewCountry ("");
-  }
-
-  // handle 
+    setProfileName("");
+    setReviewText("");
+    setReviewCountry("");
+  };
 
   return (
-    <section className="reviews">
-      <div className="comments">
-        {reviews.map((review, reviewIndex) => {
+    <>
+      <h2 className="review-title">What Our Clients Say</h2>
+      <div className="slider">
+        {reviews.map((review, index) => {
           const { review_country, review_text, profile_name } = review;
-          let position = "nextReviewSlide";
-          if (reviewIndex === index) {
-            position = "activeReviewSlide";
-          }
-          if (
-            reviewIndex === index - 1 ||
-            (index === 0 && reviewIndex === review.length - 1)
-          ) {
-            position = "lastReviewSlide";
-          }
           return (
-            <article className={position} key={profile_name}>
-              <h2 className="profile-name">{profile_name}</h2>
-              <p className="review-text">{review_text}</p>
-              <h4 className="review-country">{review_country}</h4>
-            </article>
+            <div
+              className={index === currentSlide ? "slide current" : "slide"}
+              key={profile_name}
+            >
+              {index === currentSlide && (
+                <div className="content-review">
+                  <h2>{profile_name}</h2>
+                  <p className="content-title">{review_text}</p>
+                  <h5>{review_country}</h5>
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
       <div className="comment-form-new">
         <form onSubmit={handleSubmitClick}>
-          <input 
-          type="text" 
-          name="profile_name"
-          onChange={((event)=> setProfileName(event.target.value))}
-          value = {profile_name}
-          placeholder="Enter your Name here" 
-          required />
-          <input 
-          type="text" 
-          name="review_country"
-          onChange={((event)=> setReviewCountry(event.target.value))}
-          value= {review_country}
-          placeholder="Enter Your Country" 
-          required />
+          <input
+            type="text"
+            name="profile_name"
+            onChange={(event) => setProfileName(event.target.value)}
+            value={profile_name}
+            placeholder="Enter your Name here"
+            required
+          />
+          <input
+            type="text"
+            name="review_country"
+            onChange={(event) => setReviewCountry(event.target.value)}
+            value={review_country}
+            placeholder="Enter Your Country"
+            required
+          />
           <textarea
             type="text"
             name="review_text"
-            onChange={((event)=> setReviewText(event.target.value))}
-            value = {review_text}
+            onChange={(event) => setReviewText(event.target.value)}
+            value={review_text}
             placeholder="Enter Your Comment here"
             required
           />
           <button type="submit">Add Comment</button>
         </form>
       </div>
-    </section>
+    </>
   );
 };
+
 export default Reviews;

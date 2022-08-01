@@ -4,7 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Reviews from "./Reviews";
 import MyCart from "./MyCart";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./Footer";
 import axios from "axios";
@@ -20,50 +20,26 @@ import ProductList from "./ProductList";
 function App() {
   // Initialize products state variables
   const [products, setProducts] = useState([]);
-  const [amazonProducts, setAmazonProducts] = useState ([])
   const [isHovering, setIsHovering] = useState(0);
   const [searchText, setSearchText] = useState("");
   const [itemsInCart, setItemsInCart] = useState([]);
 
- //function to handle
- const handleSearch = (textInput) => {
-   setSearchText(textInput);
- }
- // Function to handle Add to Cart Click
- const handleAddToCartClick = (productToCart) => {
+  //function to handle
+  const handleSearch = (textInput) => {
+    setSearchText(textInput);
+  };
+  // Function to handle Add to Cart Click
+  const handleAddToCartClick = (productToCart) => {
     setItemsInCart([...itemsInCart, productToCart]);
-    console.log([...itemsInCart, productToCart])
- };
- 
- // Function to handle remove button click
- const handleRemoveButtonClick = (id) => {
-  const onRemove = itemsInCart.filter((item) => item.id !== id);
-  console.log(onRemove)
-  setItemsInCart(onRemove);
-    
-    // let navigate = useNavigate();
-    // navigate("/mycart");
- }
+    console.log([...itemsInCart, productToCart]);
+  };
 
- //fetch Products from Amazon API
-//  useEffect (()=> {
-//   const options = {
-//     method: 'GET',
-//     url: 'https://amazon23.p.rapidapi.com/product-search',
-//     params: {query: 'xbox', country: 'US'},
-//     headers: {
-//       'X-RapidAPI-Key': '7310622931msh9f6735caf0bf519p1c820cjsn2c95afa5cfdc',
-//       'X-RapidAPI-Host': 'amazon23.p.rapidapi.com'
-//     }
-//   };
-  
-//   axios.get('https://amazon23.p.rapidapi.com/product-search',options).then(function (response) {
-//     setAmazonProducts(response.data.result)
-//   }).catch(function (error) {
-//     console.error(error);
-//   });
-//  },[])
- 
+  // Function to handle remove button click
+  const handleRemoveButtonClick = (id) => {
+    const onRemove = itemsInCart.filter((item) => item.id !== id);
+    console.log(onRemove);
+    setItemsInCart(onRemove);
+  };
 
   const productsUrl = "https://fakestoreapi.com/products";
 
@@ -80,12 +56,20 @@ function App() {
   }, []);
   return (
     <>
-      <Header onSearch = {handleSearch}/>
+      <Header onSearch={handleSearch} />
 
       <Routes>
         <Route path="/about" element={<About />} />
 
-        <Route path="/mycart" element={<MyCart itemsInCart={itemsInCart}  onRemove={handleRemoveButtonClick} />} />
+        <Route
+          path="/mycart"
+          element={
+            <MyCart
+              itemsInCart={itemsInCart}
+              onRemove={handleRemoveButtonClick}
+            />
+          }
+        />
 
         <Route path="/reviews" element={<Reviews />} />
 
@@ -94,16 +78,14 @@ function App() {
           element={
             <Home
               products={products}
-              amazonProducts = {amazonProducts}
               isHovering={isHovering}
               setIsHovering={setIsHovering}
-              searchText = {searchText}
-              onAddToCart = {handleAddToCartClick}
+              searchText={searchText}
+              onAddToCart={handleAddToCartClick}
             />
           }
         >
           <Route path="/productlist" element={<ProductList />}>
-
             <Route path=":id" element={<ProductDetails />} />
           </Route>
         </Route>
