@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
+
 const ProductList = (props) => {
   const { products, searchText, isHovering, setIsHovering, onAddToCart } =
     props;
@@ -26,6 +27,7 @@ const ProductList = (props) => {
       }}
     >
       <Outlet />
+     
       {productsToDisplay.map((product) => (
         <ProductCard
           key={product.id}

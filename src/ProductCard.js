@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Cart from "./images/Cart.png"
 const ProductCard = (props) => {
   const { product, isHovering, setIsHovering, onAddToCart } = props;
   const { id, image, title, price, rating } = product;
@@ -37,9 +38,10 @@ const ProductCard = (props) => {
           >{`Rating : ${rating.rate}`}</h5>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Link to={`/productlist/${id}`}>More Details</Link>
+          <Link to={`/productlist/${id}`}>Details...</Link>
           <Link to={"/mycart"}>
-            <button>Cart</button>
+            <img src={Cart} alt= "Cart" style={{height : "30px"}} />
+
           </Link>
             <button
               style={{

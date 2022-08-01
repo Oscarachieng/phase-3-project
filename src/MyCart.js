@@ -21,7 +21,7 @@ const MyCart = (props) => {
 
   console.log(itemsInCart);
   return (
-    <section>
+    <section style={{minHeight : "300px"}} >
       {itemsInCart.length === 0 ? <h1 className="cart-header-empty">Shopping Cart is Empty</h1> : <h1 className="cart-header-filled">Picked Items</h1>}
       {itemsInCart.map((product) => 
       (<div className = "item-in-cart" >

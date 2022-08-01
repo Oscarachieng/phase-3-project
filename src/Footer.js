@@ -3,6 +3,8 @@ import React, { useState } from "react";
 const Footer = () => {
 
     const [isHovering, setIsHovering] = useState(false);
+    const [email, setEmail] = useState ("");
+
    // mause hovering effect on Footer Subscribe button
     const handleMouseEnter = () => {
       setIsHovering(true);
@@ -11,6 +13,27 @@ const Footer = () => {
     const handleMouseLeave = () => {
       setIsHovering(false);
     };
+
+    // submit handler
+
+    const handleSubmit = (event) => {
+        event.preventDefault ();
+        const emailSubscriptionFormData = { email : email };
+        fetch("http://localhost:3000/newsletter", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(emailSubscriptionFormData),
+        })
+          .then((r) => r.json())
+          .then((newEmail) => console.log(newEmail));
+    
+        setEmail("");
+       
+      
+    }
   return (
     <div
       style={{
@@ -41,8 +64,12 @@ const Footer = () => {
       </div>
       <div>
         <h4 style={{ color: "white" }}>Subscribe For NewsLetter</h4>
+        <form onSubmit={handleSubmit}>
         <input
           type="text"
+          onChange={(event => setEmail(event.target.value))}
+          name="email"
+          value={email}
           placeholder="Your Email"
           style={{
             width: "100%",
@@ -63,9 +90,11 @@ const Footer = () => {
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
+          type ="submit"
         >
           Subscribe
         </button>
+        </form>
       </div>
     </div>
   );
