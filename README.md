@@ -1,70 +1,78 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SmartLydo
+# ==================
 
-## Available Scripts
+### Author :  Oscar Abuto Achieng.
+## Date : 1st August, 2022.
+####
+##
 
-In the project directory, you can run:
 
-### `npm start`
+## ==================
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Description
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### The Project is an E-commerce website which mimic certain features of real-world e-ecommerce platform applying React Js concepts.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features and functionalities.
+##  -------------------------------------------
 
-### `npm run eject`
+### 1. SearchBar to help customers easily search for their preffered products.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Navigation bar for navigation from one page to another accross the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ### 3. Each ProductCard has a button for adding to Cart for selecting the product of interest and adding to cart, a cart Icon link to help navigate to the cart to check status and a link to more details about the product.
+ ### 4. The cart component renders list of items in cart with each heving a remove button to remove it from the cart. The cart as well show the total cost of the products in the cart.
+ ### 5. The review page hosts The slides of the reviews as well as review submission form.
+  
+### The project is aimed at testing and Developing skills in React Js applying the fundamental concepts of React js.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## =================
 
-## Learn More
+## Live Link :https://spontaneous-dragon-0afb45.netlify.app/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Video preview : https://app.castify.com/view/b57be529-edec-490b-811f-4bf5e5f2579e
 
-### Code Splitting
+# *****************
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Techologies used in building the project.
 
-### Analyzing the Bundle Size
+### * HTML for structuring the App layout.
+### * Cascading Style Sheet for styling the Front-end UI.
+### * JavaScript concepts for interactivity and functionalities.
+### * React js(front-end library) for Building the of the App.
+### * JSON-server for building the mock API.
+### * Font-aw-some Icons.
+### * Visual Studio Code for
+### * External APIs for requesting data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# *************************************
 
-### Making a Progressive Web App
+#  Project Set-Up.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### The projects uses Data from external APIs and therefore there is not need to set-up another back-end. To install the project:
 
-### Advanced Configuration
+### 1. Clone the project from the GitHub repository , https://github.com/Oscarachieng/martlydo, and and open in Vs code.
+### 2. Run the command, npm install , to install dependencies for the project.
+### 3. Run npm start on the terminal within the directory of the project to start the App in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## *******************
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Contact information : oscarachieng94@gmail.com
+
+## *********************
+
+## LICENCE
+## ******************
+### MIT Lcence
+### Copyright (c) 2022 Oscar Abuto Achieng.
