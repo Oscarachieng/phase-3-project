@@ -1,0 +1,440 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: "smokewhite";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* styles the Header upper section*/
+
+.header {
+  width: 100%;
+  height: 110px;
+  background-color: orange;
+  margin-bottom: 20px;
+}
+
+.header .upper-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  border-bottom-style: groove;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+}
+
+.search {
+  margin-top: 11px;
+  padding: 10px;
+  height: 20px;
+  width: 500px;
+  border-color: transparent;
+  border-bottom: black;
+}
+
+#search-button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 90px;
+  height: 46px;
+  margin-left: 0px;
+  border-color: transparent;
+  background-color: black;
+  color: white;
+  font-size: larger;
+}
+#search-button:hover {
+  color: orange;
+  background-color: white;
+  margin-left: 5px;
+}
+nav a {
+  display: inline-block;
+  width: 50px;
+  padding: 6px;
+  margin: 0 20px 6px;
+  background-color: orange;
+  text-decoration: none;
+  color: Black;
+  margin-right: 40px;
+}
+
+.lydo span {
+  color: white;
+}
+.lydo {
+  font-size: x-large;
+}
+
+img {
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+/* styles the Header navigation section*/
+
+.navigation-buttons {
+  justify-content: space-evenly;
+  padding-left: 170px;
+}
+
+/* introduction to styling*/
+
+.introduction {
+  height: 200px;
+  width: 100%;
+}
+
+/* comment-input form*/
+.comment-form-new {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  align-items: center;
+}
+
+.comment-form-new input {
+  width: 100%;
+  padding: 0 20px;
+  border: 1px solid orange;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.comment-form-new textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid orange;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.comment-form-new button {
+  border: 0;
+  padding: 15px 20px;
+  width: auto;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(243, 180, 63);
+}
+
+.comments {
+  width: 60%;
+  padding-left: 30%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  height: 300px;
+  border: 1px solid orange;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.reviews {
+  height: fit-content;
+  align-items: center;
+}
+
+/*
+Stye the intro image slider.
+
+*/
+
+.side-show-container {
+  overflow: hidden;
+  display: flex;
+}
+article {
+  transition: all 0.5s linear;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
+}
+
+.slideImage {
+  width: 500px;
+  height: 310px;
+}
+
+.description-slider {
+  display: flex;
+  color: orange;
+  justify-content: space-evenly;
+}
+
+/* Cart styles*/
+
+.item-in-cart {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(245, 241, 241);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-image {
+  width: 100px;
+  height: 100px;
+}
+
+.cart-title {
+  width: 200px;
+  font-style: oblique;
+}
+
+.cart-price {
+  color: green;
+}
+
+.remove-button {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid orange;
+  color: orange;
+  font-weight: 800;
+  font-size: larger;
+}
+
+.amount {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  color: green;
+  display: flex-end;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: end;
+}
+.amount #amount-text {
+  color: black;
+}
+.cart-header-empty,
+.cart-header-filled {
+  text-align: center;
+  font-size: x-large;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid black;
+}
+
+/*
+styling review component
+*/
+
+.review-text {
+  font-style: oblique;
+  font-size: x-large;
+  width: 80%;
+  text-align: center;
+  height: 60%;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.review-country {
+  color: orange;
+  text-align: center;
+}
+
+article.activeReviewSlide {
+  opacity: 1;
+  transform: translateX(0);
+  width: 100%;
+}
+article.lastReviewSlide1 {
+  transform: translateX(-100%);
+}
+article.nextReviewSlide1 {
+  transform: translateX(100%);
+}
+
+.comments {
+  overflow:hidden;
+  display: flex;
+}
+
+/* Home introduction styling*/
+
+.introduction {
+  border-bottom: 1px solid gray;
+  display: flex;
+  margin-left: 120px;
+  align-content: center;
+  width: 80%;
+  height: 420px;
+  margin-bottom: 40px;
+}
+.category-side-bar {
+  height: 400px;
+  width: 150px;
+  border: 1px solid peachpuff;
+  border-width: 1px;
+  background-color: rgb(243, 241, 241);
+  text-align: "center";
+}
+.category-side-bar h4 {
+
+  color: "orange";
+ }
+
+ .side-show-container {
+  height: 400px;
+  width: 600px;
+
+  border-width: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+ }
+
+
+
+
+ .slider {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+.slide img {
+   width: 500px;
+  height: 330px;
+}
+
+
+
+.current {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  width: 90%;
+  font-style: oblique;
+  color: orange;
+  animation: slide-up 1s ease 0.5s;
+   animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+.content-title {
+  color: black;
+  font-size: x-large;
+}
+
+.current .content {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.5s ease;
+}
+
+.content-review {
+  text-align: center;
+  width: 70%;
+  font-style: oblique;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(236, 230, 214);
+  padding: 20px;
+  border: 1px solid peachpuff;
+}
+
+.content-review h2, .content-review  h5 {
+  color: chocolate;
+}
+
+.review-title {
+
+color: grey;
+font-size: x-large;
+border-bottom: 1px solid black;
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+height: 40px;
+margin-bottom: 40px;
+}
+
+.cart-header-empty {
+  min-height: 2px;
+}
+
+.about, .welcome-happy {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+em {
+  font-stretch: semi-expanded;
+  font-weight: 600;
+  width: 80%;
+}
+
+.welcome-happy {
+  margin-left: 20%;
+}
+
+.product-image-details {
+  width: 300px;
+  height: 480px;
+}
+
+.details-buttons,.details {
+  color: orange;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid orange;
+  height: 30px;
+  background-color: white;
+  font-size: large;
+}
+.details-buttons :hover {
+  background-color: rgb(255, 115, 0);
+  color: white;
+}
+.product-details {
+  color: rgb(255, 115, 0);
+}
