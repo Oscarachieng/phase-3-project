@@ -33,7 +33,7 @@ const MyCart = (props) => {
       )}
       <div className="amount">
 
-        <h2><span className="amount-text">Total Amount :</span>   {amount}</h2>
+        <h2><span id="amount-text">Total Amount :</span>   {amount}</h2>
       </div>
     </section>
   );
