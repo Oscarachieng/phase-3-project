@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Cart from "./images/Cart.png"
 const ProductCard = (props) => {
-  const { product, isHovering, setIsHovering, onAddToCart } = props;
+  const { product, isHovering, setIsHovering, onAddToCart,handleDetailsClick } = props;
   const { id, image, title, price, rating } = product;
   return (
     <div>
@@ -38,7 +38,7 @@ const ProductCard = (props) => {
           >{`Rating : ${rating.rate}`}</h5>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Link to={`/productlist/${id}`}>Details...</Link>
+          <button  onClick ={(()=>handleDetailsClick(product.id))} className="details" >Details...</button>
           <Link to={"/mycart"}>
             <img src={Cart} alt= "Cart" style={{height : "30px"}} />
 

@@ -1,15 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-// const linkStyles = {
-//   display: "inline-block",
-//   width: "50px",
-//   padding: "6px",
-//   margin: "0 20px 6px",
-//   background: "orange",
-//   textDecoration: "none",
-//   color: "Black",
-// };
+
 // condtitionally style the active Link
 const isActiveLink = ({ isActive }) => {
   return {
@@ -32,6 +24,7 @@ const NavBar = () => {
       <NavLink to="/mycart" style={isActiveLink}>
         MyCart
       </NavLink>
+
       <NavLink to="/reviews" style={isActiveLink}>
         Reviews
       </NavLink>

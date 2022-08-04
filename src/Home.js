@@ -14,10 +14,7 @@ const Home = (props) => {
     searchText,
     onAddToCart,
   } = props;
-  // Combining the two product list (products,amazonProducts)
-  // const generalProductList = [...products,...amazonProducts];
-  // console.log(generalProductList);
-  // console.log(products);
+  
   return (
     <div>
       <div

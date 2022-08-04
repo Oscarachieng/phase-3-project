@@ -18,8 +18,6 @@ const MyCart = (props) => {
   useEffect (()=> {
     handlePrice()
   });
-
-  console.log(itemsInCart);
   return (
     <section style={{minHeight : "300px"}} >
       {itemsInCart.length === 0 ? <h1 className="cart-header-empty">Shopping Cart is Empty</h1> : <h1 className="cart-header-filled">Picked Items</h1>}
@@ -35,7 +33,7 @@ const MyCart = (props) => {
       )}
       <div className="amount">
 
-        <h2><span id="amount-text">Total Amount :</span>   {amount}</h2>
+        <h2><span className="amount-text">Total Amount :</span>   {amount}</h2>
       </div>
     </section>
   );
