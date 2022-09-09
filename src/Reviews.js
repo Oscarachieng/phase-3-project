@@ -5,15 +5,15 @@ import React, { useEffect, useState } from "react";
 
 const Reviews = () => {
   const [reviews, setRevviews] = useState([]);
-  const [profile_name, setProfileName] = useState("");
-  const [review_text, setReviewText] = useState("");
-  const [review_country, setReviewCountry] = useState("");
+  const [product_id, setProduct_id] = useState("");
+  const [comment, setComment] = useState("");
+  const [user_id, setUser_id] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideLength = reviews.length;
 
   useEffect(() => {
     axios
-      .get("https://62e76b330e5d74566af3e785.mockapi.io/data")
+      .get("http://localhost:9292/reviews")
       .then((response) => {
         console.log(response.data);
         setRevviews(response.data);
@@ -49,9 +49,9 @@ const Reviews = () => {
     event.preventDefault();
 
     const formData = {
-      profile_name: profile_name,
-      review_text: review_text,
-      review_country: review_country,
+      product_id: product_id,
+      user_id: user_id,
+      comment: comment,
     };
     fetch("http://localhost:3000/data", {
       method: "POST",
@@ -64,9 +64,9 @@ const Reviews = () => {
       .then((r) => r.json())
       .then((newReviewItem) => setRevviews([...reviews, newReviewItem]));
 
-    setProfileName("");
-    setReviewText("");
-    setReviewCountry("");
+    setProduct_id("");
+    setComment("");
+    setUser_id("");
   };
 
   return (
@@ -74,17 +74,17 @@ const Reviews = () => {
       <h2 className="review-title">What Our Clients Say</h2>
       <div className="slider">
         {reviews.map((review, index) => {
-          const { review_country, review_text, profile_name } = review;
+          //const { review_country, comment, profile_name } = review;
           return (
             <div
               className={index === currentSlide ? "slide current" : "slide"}
-              key={profile_name}
+              key={review.user.name}
             >
               {index === currentSlide && (
                 <div className="content-review">
-                  <h2>{profile_name}</h2>
-                  <p className="content-title">{review_text}</p>
-                  <h5>{review_country}</h5>
+                  <h2>{review.user.name}</h2>
+                  <p className="content-title">{review.comment}</p>
+                  <h5>{review.user.location}</h5>
                 </div>
               )}
             </div>
@@ -95,25 +95,25 @@ const Reviews = () => {
         <form onSubmit={handleSubmitClick}>
           <input
             type="text"
-            name="profile_name"
+            name="product_id"
             onChange={(event) => setProfileName(event.target.value)}
-            value={profile_name}
+            value={product_id}
             placeholder="Enter your Name here"
             required
           />
           <input
             type="text"
-            name="review_country"
+            name="user_id"
             onChange={(event) => setReviewCountry(event.target.value)}
-            value={review_country}
+            value={user_id}
             placeholder="Enter Your Country"
             required
           />
           <textarea
             type="text"
-            name="review_text"
+            name="comment"
             onChange={(event) => setReviewText(event.target.value)}
-            value={review_text}
+            value={comment}
             placeholder="Enter Your Comment here"
             required
           />

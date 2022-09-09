@@ -29,7 +29,7 @@ const IntroImageSlide = ({ products }) => {
   return (
     <div className="slider">
       {products.map((product, index) => {
-        const { id, image, title, price } = product;
+        const { id, image_url, title, price } = product;
         return (
           <div
             className={index === currentSlide ? "slide current" : "slide"}
@@ -37,7 +37,7 @@ const IntroImageSlide = ({ products }) => {
           >
             {index === currentSlide && (
               <div>
-                <img src={image} alt="slide" className="image" />
+                <img src={image_url} alt="slide" className="image" />
                 <div className="content">
                   <h2>{title}</h2>
                   <p className="content-title">$ {price}</p>

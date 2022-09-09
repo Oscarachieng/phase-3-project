@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import ProductDetails from "./ProductDetails";
 import ProductList from "./ProductList";
+import Sign from "./Sign-up"
 
 /* 
  1. declare product state variables
@@ -41,7 +42,7 @@ function App() {
     setItemsInCart(onRemove);
   };
 
-  const productsUrl = "https://fakestoreapi.com/products";
+  const productsUrl = "http://localhost:9292/products";
 
   // Fetch data using axios
   useEffect(() => {
@@ -54,6 +55,8 @@ function App() {
         console.error(error);
       });
   }, []);
+
+  console.log(products)
   return (
     <>
       <Header onSearch={handleSearch} />
@@ -78,17 +81,26 @@ function App() {
           element={
             <Home
               products={products}
+            />
+          }
+        ></Route>
+        <Route
+          path="/productlist"
+          element={
+            <ProductList
+              products={products}
+              searchText={searchText}
               isHovering={isHovering}
               setIsHovering={setIsHovering}
-              searchText={searchText}
               onAddToCart={handleAddToCartClick}
             />
           }
-        >
-          <Route path="/productlist" element={<ProductList />}>
-            <Route path=":id" element={<ProductDetails />} />
-          </Route>
-        </Route>
+        />
+        <Route path="/productlist/:id" element={<ProductDetails
+        products = {products}
+        onAddToCart = {handleAddToCartClick} 
+        />} />
+        <Route path="/sign" element={<Sign />} />
       </Routes>
       <Footer />
     </>

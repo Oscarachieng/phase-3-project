@@ -1,7 +1,5 @@
 import React from "react";
 
-import ProductList from "./ProductList";
-
 import IntroImageSlide from "./IntroImageSlide";
 import Shop from "./images/Shop.jpg";
 import Cart from "./images/Cart.png"
@@ -9,10 +7,10 @@ import Cart from "./images/Cart.png"
 const Home = (props) => {
   const {
     products,
-    isHovering,
-    setIsHovering,
-    searchText,
-    onAddToCart,
+    // isHovering,
+    // setIsHovering,
+    // searchText,
+    // onAddToCart,
   } = props;
   
   return (
@@ -73,13 +71,13 @@ const Home = (props) => {
       </div>
       {/* <ProductDetails products={products} isHovering={isHovering} /> */}
       <em className="cart-link"><span>Note :</span>Click on <img src={Cart} alt= "Cart" style={{height : "30px", width : "80%"}} /> on product cards to see Your shopping Cart. </em>
-      <ProductList
+      {/* <ProductList
         setIsHovering={setIsHovering}
         products={products}
         isHovering={isHovering}
         searchText={searchText}
         onAddToCart={onAddToCart}
-      />
+      /> */}
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import ProductDetails from "./ProductDetails";
+
 
 
 const ProductList = (props) => {
-  const [details, setDetails] = useState(false)
-  const [productForDetails, setProductForDetails] = useState({})
+  // const [details, setDetails] = useState(false)
+  // const [productForDetails, setProductForDetails] = useState({})
   const { products, searchText, isHovering, setIsHovering, onAddToCart } =
     props;
 
@@ -18,15 +18,16 @@ const ProductList = (props) => {
 
   //details filter
   
-  const handleDetailsClick =(productId)=> {
-    const detailsProduct = products.filter(product => product.id === productId);
-    setProductForDetails(detailsProduct);
-    setDetails(true)
-    console.log(productId);
-  }
+  // const handleDetailsClick =(productId)=> {
+  //   const detailsProduct = products.filter(product => product.id === productId);
+  //   setProductForDetails(detailsProduct);
+  //   setDetails(true)
+  //   console.log(productId);
+  
   return (
     <div style={{display:"flex"}}>
-      {details ? <ProductDetails productForDetails={productForDetails} setDetails={setDetails} onAddToCart={onAddToCart}/> : null}
+     
+      {/* {details ? <ProductDetails productForDetails={productForDetails} setDetails={setDetails} onAddToCart={onAddToCart}/> : null} */}
     <div
       style={{
         minHeight: "400px",
@@ -40,6 +41,7 @@ const ProductList = (props) => {
         justifyContent: "space-around",
       }}
     >
+      
       <Outlet />
      
       {productsToDisplay.map((product) => (
@@ -49,7 +51,6 @@ const ProductList = (props) => {
           isHovering={isHovering}
           setIsHovering={setIsHovering}
           onAddToCart={onAddToCart}
-          handleDetailsClick={handleDetailsClick}
         />
       ))}
     </div>

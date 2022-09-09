@@ -17,8 +17,8 @@ const NavBar = () => {
         Home
       </NavLink>
 
-      <NavLink to="/about" style={isActiveLink}>
-        About
+      <NavLink to="/productlist" style={isActiveLink}>
+        Products
       </NavLink>
 
       <NavLink to="/mycart" style={isActiveLink}>
@@ -28,6 +28,11 @@ const NavBar = () => {
       <NavLink to="/reviews" style={isActiveLink}>
         Reviews
       </NavLink>
+
+      <NavLink to="/sign" style={isActiveLink}>
+        Sign
+      </NavLink>
+
     </nav>
   );
 };

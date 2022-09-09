@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Cart from "./images/Cart.png"
 const ProductCard = (props) => {
-  const { product, isHovering, setIsHovering, onAddToCart,handleDetailsClick } = props;
-  const { id, image, title, price, rating } = product;
+  const { product, isHovering, setIsHovering, onAddToCart} = props;
+  const { id, image_url, title, price, ratting } = product;
   return (
     <div>
       <div
@@ -16,7 +16,7 @@ const ProductCard = (props) => {
         key={id}
       >
         <img
-          src={image}
+          src={image_url}
           alt="Product"
           style={{ width: "200px", maxHeight: "150px" }}
         />
@@ -35,10 +35,10 @@ const ProductCard = (props) => {
           >{`Price : ${price}`}</h5>
           <h5
             style={{ width: "250px", fontSize: "medium", color: "orange" }}
-          >{`Rating : ${rating.rate}`}</h5>
+          >{`Rating : ${ratting.rate}`}</h5>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <button  onClick ={(()=>handleDetailsClick(product.id))} className="details" >Details...</button>
+          <Link to = {`/productlist/${id}`}><button className="details" >Details...</button></Link> 
           <Link to={"/mycart"}>
             <img src={Cart} alt= "Cart" style={{height : "30px"}} />
 

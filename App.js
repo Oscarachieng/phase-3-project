@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import ProductDetails from "./ProductDetails";
 import ProductList from "./ProductList";
+import Sign from "./Sign-Up"
 
 /* 
  1. declare product state variables
@@ -78,17 +79,21 @@ function App() {
           element={
             <Home
               products={products}
-              isHovering={isHovering}
-              setIsHovering={setIsHovering}
-              searchText={searchText}
-              onAddToCart={handleAddToCartClick}
+              
             />
           }
-        >
-          <Route path="/productlist" element={<ProductList />}>
-            <Route path=":id" element={<ProductDetails />} />
-          </Route>
-        </Route>
+        />
+        <Route path="/productlist" element={<ProductList
+         products={products}
+         searchText={searchText}
+         isHovering={isHovering}
+         setIsHovering={setIsHovering}
+         onAddToCart={handleAddToCartClick}
+         />} />
+        <Route path="/productlist/:id" element={<ProductDetails 
+        products = {products}
+        />} />
+        <Route path="/sign" element={<Sign />} />
       </Routes>
       <Footer />
     </>

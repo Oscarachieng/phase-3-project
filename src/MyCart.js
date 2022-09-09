@@ -23,7 +23,7 @@ const MyCart = (props) => {
       {itemsInCart.length === 0 ? <h1 className="cart-header-empty">Shopping Cart is Empty</h1> : <h1 className="cart-header-filled">Picked Items</h1>}
       {itemsInCart.map((product) => 
       (<div className = "item-in-cart" >
-          <img src={product.image} alt={product.title} className = "cart-image"/>
+          <img src={product.image_url} alt={product.title} className = "cart-image"/>
           
           <h4 className="cart-title">{product.title}</h4>
           

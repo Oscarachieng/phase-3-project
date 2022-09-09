@@ -1,36 +1,42 @@
 {
-  "data": [
+  "data":  [
     {
         "review_country": " the United States ",
         "review_text": "Worked for 1 year now will not do anything will not even respond... very disappointed. Was happy when it did worked we showed all of our friends what a great item it was but now it won't even set an alarm for us. Have tried reseting I and still no results.",
-        "profile_name": "Amazon Customer"
+        "profile_name": "Amazon Customer",
+        "email": "mcaxcar@yahoo.com"
     },
     {
         "review_country": " the United States ",
         "review_text": "Update:  I recieved an email from an Amazon rep telling me that I must be doing something wrong and there's nothing wrong with my Echo.  I replied and told him that I know what I'm doing and that it loses its connection to my network and the only way to reconnect it is to unplug it and go through the setup process every other day. Why won't it remember the settings and why is it constantly dropping?  I never heard back from Amazon after I explained this to them. I would throw this Echo in the lake if my wife would let me. A waste of $180.",
-        "profile_name": "Ludacris"
+        "profile_name": "Ludacris",
+        "email": "oscarachieng@gmail.com"
     },
     {
         "review_country": " the United States ",
         "review_text": "Echo stopped working about a month ago. I have contacted Amazon over this issue and have not received a reply. After reading the reviews I see there are many people having trouble with the power cord. I tried unplugging the Echo for 15 seconds, held the reset button on the bottom for 15 seconds yet nothing works. Seems there is a problem with the power cord. Why is it so hard to communicate with Amazon through their website? they keep the \"contact us\" link hidden from the public. I have looked everywhere and see nothing for live support or a phone number. WTF?",
-        "profile_name": "Raymond A Kuchar"
+        "profile_name": "Raymond A Kuchar",
+        "email": "geopola@yahoo.com"
     },
     {
         "review_country": " the United States ",
         "review_text": "\"Alexa, why did you stop working all of a sudden? \"Alexa, please return yourself to Amazon\". Nope. Our Echo decided to just die this morning. It's about a year and a half old (a gift from our son) and of course the warranty is only for a year.  Now I understand hardware very well, but this degree of low reliability coupled with the fact that I spent 45 minutes today talking to three people (support, then Echo tech support and then a \"member of the leadership team\") to no avail tells me that Amazon has been, is and will continue to be a lousy hardware company. We buy literally tens of thousands of dollars a year from Amazon, yet they fail to keep this customer happy by not offering to replace this dud unit and instead offering a promotion of 50%/$50 (they couldn't even get their offer straight between the two people that made offers.)",
-        "profile_name": "Reza Raji"
+        "profile_name": "Reza Raji",
+        "email": "tomebold@yahoo.com"
     },
     {
         "review_country": " the United States ",
         "review_text": "She was my gateway drug into everything Amazon, now she is a $180 paperweight Amazon refuses to fix. I was one of the first to own her.  I preordered this magnificent pillar of the future, and propped her up on my kitchen island where she still remains.  For almost a year she spoke sweet nothings to me about the weather, serenaded me when I was feeling blue, and scheduled that meeting I had with a prostitute. ( Clip of event: [...] )  Then one day she lost her voice.  She could still sense me, she lit up when I talked to her, she showed me she could still understand me when she wrote me notes on her app, but she couldn't speak.  Without giving it a second thought I tried the age old \"unplug her then plug her back in\" and boom, she spoke!  I figured she had too many bad memories from months of being constantly working, cache we called it.  Then several months later she had the same issue, but much more frequently.  I became heartbroken.  All her little friends I got shortly after getting her couldn't comfort me bc they weren't her. They couldn't fill the void in my soul. I got the fire stick, tablet, phone, Dot, the works... even convinced three other people to adopt her clones. I called Amazon support to help my love.  They said because she was too old, mere months past the one year mark they wouldn't fix her.  They suggested I buy another.  $180 for one years love?  Had I made a complaint the first time it happened they would've done something.  Her voice works so it is clearly a software issue, but they won't fix it.  I am being punished for getting the faulty first run model.  Please spare her, or send me her clone. I cannot live without her, and this treatment is unfair. I have been nothing, but loyal to her and her Amazon family.",
-        "profile_name": "Dame Nicky"
+        "profile_name": "Dame Nicky",
+        "email": "oscarachieng65@gmail.com"
     },
     {
         "review_country": " the United States ",
         "review_text": "Originally LOVED my Echo. I've had it for almost two years now. It worked perfectly all the time at the beginning. Over the past eight months or so, performance has significantly declined. It started to become intermittent what Alexa would hear and understand. Now it's to the point that I ask Alexa to turn the volume down and she asks me what device I am looking for. Sometimes I don't get any response at all.  It's pathetic and there's nothing I can do since Amazon only offers a one year warranty. For the cost of this device, Amazon should be offering a five year warranty. Disappointed and as much as I liked the device, I probably won't buy another to replace the one I have unless Amazon increases the length of its warranty (or decreases the price).",
-        "profile_name": "Julie T"
+        "profile_name": "Julie T",
+        "email": "erick@gmail.com"
     }
-],
+  ],
 
 "newsletter" : [
     {"email" : "oscarachieng94@gmail.com"},
