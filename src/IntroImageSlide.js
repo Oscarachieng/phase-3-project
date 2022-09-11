@@ -36,12 +36,12 @@ const IntroImageSlide = ({ products }) => {
             key={id}
           >
             {index === currentSlide && (
-              <div>
-                <img src={image_url} alt="slide" className="image" />
+              <div className="home-welcome">
                 <div className="content">
                   <h2>{title}</h2>
                   <p className="content-title">$ {price}</p>
                 </div>
+                <img src={image_url} alt="slide" className="image" />
               </div>
             )}
           </div>

@@ -185,6 +185,10 @@ article.nextSlide {
   justify-content: space-evenly;
 }
 
+div.home-welcome {
+  display: flex;
+}
+
 /* Cart styles*/
 
 .item-in-cart {
@@ -287,9 +291,9 @@ article.nextReviewSlide1 {
 .introduction {
   border-bottom: 1px solid gray;
   display: flex;
-  margin-left: 120px;
+  margin-left: 70px;
   align-content: center;
-  width: 80%;
+  width: 90%;
   height: 420px;
   margin-bottom: 40px;
 }
@@ -329,7 +333,7 @@ article.nextReviewSlide1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 800px;
   height: 400px;
   opacity: 0;
   transform: translateX(-50%);

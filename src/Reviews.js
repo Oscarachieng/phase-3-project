@@ -53,7 +53,7 @@ const Reviews = () => {
       user_id: user_id,
       comment: comment,
     };
-    fetch("http://localhost:3000/data", {
+    fetch("http://localhost:9292/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const Reviews = () => {
       body: JSON.stringify(formData),
     })
       .then((r) => r.json())
-      .then((newReviewItem) => setRevviews([...reviews, newReviewItem]));
+      .then((newReviewItem) => console.log(newReviewItem));
 
     setProduct_id("");
     setComment("");
@@ -96,7 +96,7 @@ const Reviews = () => {
           <input
             type="text"
             name="product_id"
-            onChange={(event) => setProfileName(event.target.value)}
+            onChange={(event) => setProduct_id(event.target.value)}
             value={product_id}
             placeholder="Enter your Name here"
             required
@@ -104,7 +104,7 @@ const Reviews = () => {
           <input
             type="text"
             name="user_id"
-            onChange={(event) => setReviewCountry(event.target.value)}
+            onChange={(event) => setUser_id(event.target.value)}
             value={user_id}
             placeholder="Enter Your Country"
             required
@@ -112,7 +112,7 @@ const Reviews = () => {
           <textarea
             type="text"
             name="comment"
-            onChange={(event) => setReviewText(event.target.value)}
+            onChange={(event) => setComment(event.target.value)}
             value={comment}
             placeholder="Enter Your Comment here"
             required
