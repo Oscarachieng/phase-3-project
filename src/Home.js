@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import IntroImageSlide from "./IntroImageSlide";
-import Shop from "./images/Shop.jpg";
-import Cart from "./images/Cart.png";
 
 const Home = (props) => {
   const { products } = props;
+  const [isHovering, setIsHovering] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
 
-  const uniqueCategory = [...new Set(products.map(product => product.category))]
-  console.log(uniqueCategory)
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
+  const uniqueCategory = [
+    ...new Set(products.map((product) => product.category)),
+  ];
+  console.log(uniqueCategory);
 
   return (
     <div>
@@ -40,29 +49,47 @@ const Home = (props) => {
             .filter((product) => product.id === 13 || product.id === 8)
             .map((prod) => {
               return (
-                <div key={prod.id} style= {{display : "flex", marginBottom : "10px"}}>
-                   <h6 style={{color: "chocolate"}}>{prod.title}</h6>
+                <div
+                  key={prod.id}
+                  style={{ display: "flex", marginBottom: "10px"}}
+                 
+                >
+                  <h6 style={{ color: "chocolate" }}>{prod.title}</h6>
                   <img
                     src={prod.image_url}
                     alt="shop"
                     style={{
-                      width: "50%",
+                      width: isHovering ? "70%" : "50%",
                       height: "200px",
                       marginRight: "100px",
                     }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                   />
-                 
                 </div>
               );
             })}
         </div>
       </div>
-      {/* <ProductDetails products={products} isHovering={isHovering} /> */}
-      <em className="cart-link">
-        <span>Note :</span>Click on{" "}
-        <img src={Cart} alt="Cart" style={{ height: "30px", width: "70%" }} />{" "}
-        on product cards to see Your shopping Cart.{" "}
-      </em>
+      <Link to={"/productlist"} >
+      <section
+        style={{
+          display: "flex",
+          height: "50px",
+          borderBottomColor: "black",
+          border: "groove",
+          borderWidth:"1px",
+          color: "chocolate",
+          justifyContent: "space-evenly",
+          textDecoration: "none",
+          paddingBottom: "20px"
+        }}
+      >
+        {uniqueCategory.map((item) => (
+         <h2 key={item}>{item}</h2>
+        ))}
+      </section>
+      </Link>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const IntroImageSlide = ({ products }) => {
   };
 
   const auto = () => {
-    slideInterval = setInterval(nextSlide, 5000);
+    slideInterval = setInterval(nextSlide, 7000);
   };
 
   useEffect(() => {
@@ -38,10 +38,10 @@ const IntroImageSlide = ({ products }) => {
             {index === currentSlide && (
               <div className="home-welcome">
                 <div className="content">
+                <img src={image_url} alt="slide" className="image" />
                   <h2>{title}</h2>
                   <p className="content-title">$ {price}</p>
                 </div>
-                <img src={image_url} alt="slide" className="image" />
               </div>
             )}
           </div>

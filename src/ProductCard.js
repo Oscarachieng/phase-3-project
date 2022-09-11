@@ -4,6 +4,8 @@ import Cart from "./images/Cart.png"
 const ProductCard = (props) => {
   const { product, isHovering, setIsHovering, onAddToCart} = props;
   const { id, image_url, title, price, ratting } = product;
+
+  
   return (
     <div>
       <div
@@ -14,6 +16,7 @@ const ProductCard = (props) => {
           textAlign: "center",
         }}
         key={id}
+        
       >
         <img
           src={image_url}
