@@ -84,7 +84,7 @@ img {
 
 .navigation-buttons {
   justify-content: space-evenly;
-  padding-left: 80px;
+  padding-left: 20px;
 }
 
 /* introduction to styling*/
@@ -482,4 +482,8 @@ em {
   font-weight: bold;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
 }

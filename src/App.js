@@ -11,6 +11,7 @@ import axios from "axios";
 import ProductDetails from "./ProductDetails";
 import ProductList from "./ProductList";
 import Sign from "./Sign-up"
+import Login from "./Login"
 
 /* 
  1. declare product state variables
@@ -101,6 +102,7 @@ function App() {
         onAddToCart = {handleAddToCartClick} 
         />} />
         <Route path="/sign" element={<Sign />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>

@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -121,7 +122,9 @@ const Sign = () => {
           />
           <p
             id="pwdnote"
-            className={passWordFocus && !validPassWord ? "instructions" : "offscreen"}
+            className={
+              passWordFocus && !validPassWord ? "instructions" : "offscreen"
+            }
           >
             8 to 24 characters.
             <br />
@@ -143,6 +146,13 @@ const Sign = () => {
             Register
           </button>
         </form>
+        <p>
+          Already registered?
+          <br />
+          <span className="line">
+            <Link to={"/login"}>Sign In</Link>
+          </span>
+        </p>
       </div>
     </>
   );
