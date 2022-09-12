@@ -6,16 +6,33 @@ const Login = () => {
   const [passWord, setPassWord] = useState("");
   //const [errMsg, setErrMsg] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = {
+      email: email,
+      password: passWord,
+    };
+    fetch("http://localhost:9292/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((r) => r.json())
+      .then((newUserItem) => console.log(newUserItem));
+
+    setEmail("");
+    setPassWord("");
   };
 
   return (
     <>
       <div className="comment-form-new">
         <h3>User Login :</h3>
-        <form onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <h5>Email Address :</h5>
           <input
             type="email"

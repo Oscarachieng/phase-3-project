@@ -38,7 +38,7 @@ const ProductCard = (props) => {
           >{`Price : ${price}`}</h5>
           <h5
             style={{ width: "250px", fontSize: "medium", color: "orange" }}
-          >{`Rating : ${ratting.rate}`}</h5>
+          >{`Rating : ${ratting}`}</h5>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Link to = {`/productlist/${id}`}><button className="details" >Details...</button></Link> 
