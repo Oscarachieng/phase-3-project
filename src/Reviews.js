@@ -13,7 +13,7 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9292/reviews")
+      .get("https://phase-3-sinatra-project.herokuapp.com/reviews")
       .then((response) => {
         console.log(response.data);
         setRevviews(response.data);
@@ -53,7 +53,7 @@ const Reviews = () => {
       user_id: user_id,
       comment: comment,
     };
-    fetch("http://localhost:9292/reviews", {
+    fetch("https://phase-3-sinatra-project.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

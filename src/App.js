@@ -43,7 +43,7 @@ function App() {
     setItemsInCart(onRemove);
   };
 
-  const productsUrl = "http://localhost:9292/products";
+  const productsUrl = "https://phase-3-sinatra-project.herokuapp.com/products";
 
   // Fetch data using axios
   useEffect(() => {
