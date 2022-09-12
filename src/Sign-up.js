@@ -1,11 +1,12 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const Sign = () => {
   const userRef = useRef();
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [validName, setValidName] = useState(false);
@@ -55,6 +56,7 @@ const Sign = () => {
     setLocation("");
     setEmail("");
     setPassWord("");
+    navigate("/login")
   };
 
   return (
