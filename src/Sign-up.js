@@ -41,7 +41,7 @@ const Sign = () => {
       location: location,
       password: password,
     };
-    fetch("http://localhost:9292/users", {
+    fetch("https://phase-3-sinatra-project.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

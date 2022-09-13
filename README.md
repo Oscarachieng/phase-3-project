@@ -3,7 +3,7 @@
 # ==================
 
 ### Author :  Oscar Abuto Achieng.
-## Date : 1st August, 2022.
+## Date : 8th September, 2022.
 ####
 ##
 
@@ -35,10 +35,10 @@
 
 ## =================
 
-## Live Link :https://spontaneous-dragon-0afb45.netlify.app/
+## Live Link :phase-3-project.vercel.app/
 
 
-### Video preview : https://app.castify.com/view/b57be529-edec-490b-811f-4bf5e5f2579e
+### 
 
 # *****************
 
@@ -47,10 +47,11 @@
 ### * HTML for structuring the App layout.
 ### * Cascading Style Sheet for styling the Front-end UI.
 ### * JavaScript concepts for interactivity and functionalities.
+### * Ruby Programming language
 ### * React js(front-end library) for Building the of the App.
-### * JSON-server for building the mock API.
+### * Sintra on the server for building the mock API.
 ### * Font-aw-some Icons.
-### * Visual Studio Code for
+### * Visual Studio Code as the code editor for the project.
 ### * External APIs for requesting data.
 
 # *************************************
@@ -59,9 +60,10 @@
 
 ### The projects uses Data from external APIs and therefore there is not need to set-up another back-end. To install the project:
 
-### 1. Clone the project from the GitHub repository , https://github.com/Oscarachieng/martlydo, and and open in Vs code.
+### 1. Clone the project from the GitHub repository , https://github.com/Oscarachieng/phase-3-project, and and open in Vs code.
 ### 2. Run the command, npm install , to install dependencies for the project.
 ### 3. Run npm start on the terminal within the directory of the project to start the App in the browser.
+### 4. The back-end in hosted in heroku and we recommend using the hosted database.
 
 
 

@@ -51,8 +51,7 @@ const Home = (props) => {
               return (
                 <div
                   key={prod.id}
-                  style={{ display: "flex", marginBottom: "10px"}}
-                 
+                  style={{ display: "flex", marginBottom: "10px" }}
                 >
                   <h6 style={{ color: "chocolate" }}>{prod.title}</h6>
                   <img
@@ -71,25 +70,50 @@ const Home = (props) => {
             })}
         </div>
       </div>
-      <Link to={"/productlist"} >
+
       <section
         style={{
           display: "flex",
           height: "50px",
           borderBottomColor: "black",
           border: "groove",
-          borderWidth:"1px",
+          borderWidth: "1px",
           color: "chocolate",
           justifyContent: "space-evenly",
           textDecoration: "none",
-          paddingBottom: "20px"
+          paddingBottom: "20px",
         }}
       >
-        {uniqueCategory.map((item) => (
-         <h2 key={item}>{item}</h2>
-        ))}
+        {uniqueCategory.map((item) => {
+          if (item === "men's clothing") {
+            const newItem = "mens";
+            return (
+              <Link to={`/home/${newItem}`}>
+                <h2 style={{ color: "chocolate" }} key={item}>
+                  {item}
+                </h2>
+              </Link>
+            );
+          } else if (item === "women's clothing") {
+            const newWomen = "womens";
+            return (
+              <Link to={`/home/${newWomen}`}>
+                <h2 style={{ color: "chocolate" }} key={item}>
+                  {item}
+                </h2>
+              </Link>
+            );
+          } else {
+            return (
+              <Link to={`/home/${item}`}>
+                <h2 style={{ color: "chocolate" }} key={item}>
+                  {item}
+                </h2>
+              </Link>
+            );
+          }
+        })}
       </section>
-      </Link>
     </div>
   );
 };

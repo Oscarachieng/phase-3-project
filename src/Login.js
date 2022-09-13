@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [passWord, setPassWord] = useState("");
 
-  const navigate = useNavigate()
-  //const [errMsg, setErrMsg] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +14,7 @@ const Login = () => {
       email: email,
       password: passWord,
     };
-    fetch("http://localhost:9292/login", {
+    fetch("https://phase-3-sinatra-project.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,19 +22,23 @@ const Login = () => {
       },
       body: JSON.stringify(formData),
     })
-      .then((r) => r.json())
-      .then((newUserItem) => console.log(newUserItem));
+      .then((r) => {
+        return r.json();
+      })
+      .then((newUserItem) => {
+        console.log(newUserItem);
+      });
 
     setEmail("");
     setPassWord("");
-    navigate("/")
+    navigate("/");
   };
 
   return (
     <>
       <div className="comment-form-new">
         <h3>User Login :</h3>
-        <form  onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <h5>Email Address :</h5>
           <input
             type="email"

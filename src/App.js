@@ -12,6 +12,10 @@ import ProductDetails from "./ProductDetails";
 import ProductList from "./ProductList";
 import Sign from "./Sign-up"
 import Login from "./Login"
+import Electronics from "./Electronics";
+import Jewellery from "./Jewellery";
+import Mens from "./Mens";
+import Womens from "./Womens";
 
 /* 
  1. declare product state variables
@@ -103,6 +107,10 @@ function App() {
         />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home/electronics" element={<Electronics products = {products}/>} />
+        <Route path="/home/jewelery" element={<Jewellery products = {products}/>} />
+        <Route path="/home/mens" element={<Mens products = {products}/>} />
+        <Route path="/home/womens" element={<Womens products = {products} />} />
       </Routes>
       <Footer />
     </>
