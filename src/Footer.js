@@ -86,7 +86,8 @@ const Footer = () => {
             marginLeft: "170px",
             borderColor: "transparent",
             color: isHovering ? "orangered" : "white",
-            backgroundColor: isHovering ? "white" : "orange"
+            backgroundColor: isHovering ? "white" : "orange",
+            textAlign: "center"
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}

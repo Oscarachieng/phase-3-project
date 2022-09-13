@@ -152,7 +152,7 @@ const Sign = () => {
           Already registered?
           <br />
           <span className="line">
-            <Link to={"/login"}>Sign In</Link>
+            <Link to={"/login"}>Sign Up</Link>
           </span>
         </p>
       </div>

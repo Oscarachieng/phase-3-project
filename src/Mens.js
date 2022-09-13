@@ -75,6 +75,11 @@ const Mens = (props) => {
             borderColor: "transparent",
             color: "white",
             backgroundColor: "orange",
+            height: "40px",
+            fontSize: "large",
+            marginTop: "20px",
+            marginLeft: "170px",
+            borderColor: "transparent"
           }}
         >
           back
