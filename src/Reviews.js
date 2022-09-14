@@ -15,7 +15,6 @@ const Reviews = () => {
     axios
       .get("https://phase-3-sinatra-project.herokuapp.com/reviews")
       .then((response) => {
-        console.log(response.data);
         setRevviews(response.data);
       })
       .catch(function (error) {
