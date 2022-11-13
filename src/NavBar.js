@@ -29,12 +29,12 @@ const NavBar = () => {
         Reviews
       </NavLink>
 
-      <NavLink to="/sign" style={isActiveLink}>
-        Sign
-      </NavLink>
-      <NavLink to="/login" style={isActiveLink}>
-        Login
-      </NavLink>
+//       <NavLink to="/sign" style={isActiveLink}>
+//         Sign
+//       </NavLink>
+//       <NavLink to="/login" style={isActiveLink}>
+//         Login
+//       </NavLink>
 
 
     </nav>
